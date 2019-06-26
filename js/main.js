@@ -1,6 +1,8 @@
 // Função para gerar elementos no DOM
-function gerarPizza() {
+var totalPizzas = [];
 
+function gerarPizza() {
+	var contadorPizzas = document.querySelector('#total-Pizzas')
 	var containerPizzas = document.querySelector("#container-pizzas");
 	var pizza = document.createElement("li");
 
@@ -11,6 +13,11 @@ function gerarPizza() {
 	pizzaImg.className = "borda-redonda";
 	pizza.appendChild(pizzaImg);
 	containerPizzas.appendChild(pizza);
+// Adicionando pizza no array
+	totalPizzas.push(pizza);
+
+	var numeroPizzas = totalPizzas.length;
+	contadorPizzas.innerHTML = numeroPizzas;
 }
 
 // Coletando o botão
